@@ -8,6 +8,7 @@ RUN ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 RUN apt-get install -y php
 RUN apt-get install -y git
+RUN chmod -R 777 /mnt
 VOLUME ["/mnt/data"]
 EXPOSE 80
 COPY ./start.sh /start.sh
